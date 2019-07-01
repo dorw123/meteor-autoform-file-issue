@@ -1,0 +1,15 @@
+<template name="DocumentForm">
+    {{#if doc}}
+        {{#autoForm collection="Documents" type="update" doc=doc id="update-document" }}
+            {{> afQuickField name="name"}}
+            {{> afQuickField name="file"}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        {{/autoForm}}
+    {{else}}
+        {{#autoForm collection="Documents" type="insert" id="add-document"}}
+            {{> afQuickField name="name"}}
+            {{> afQuickField name="file"}}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        {{/autoForm}}
+    {{/if}}
+</template>
